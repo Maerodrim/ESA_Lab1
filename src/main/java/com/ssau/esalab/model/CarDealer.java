@@ -23,11 +23,6 @@ public class CarDealer {
     private String phone;
 
     @OneToMany(mappedBy = "carDealer", orphanRemoval = true)
-    @JsonIgnoreProperties({"cars"})
-    private List<Model> models = new ArrayList<>();
-
-    @OneToMany(mappedBy = "carDealer", orphanRemoval = true)
-    @JsonIgnoreProperties({"models"})
     private List<Manager> managers = new ArrayList<>();
 }
 

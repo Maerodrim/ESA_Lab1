@@ -21,10 +21,10 @@ public class Model implements Serializable {
     private String fullName;
     @Column(name = "age")
     private Integer age;
-    @Column(name = "height")
-    private Integer height;
-    @Column(name = "weight")
-    private Integer weight;
+    @Column(name = "brand")
+    private String brand;
+    @Column(name = "body")
+    private String body;
     @Column(name = "contractNumber")
     private Integer contractNumber;
     @Column(name = "phone")

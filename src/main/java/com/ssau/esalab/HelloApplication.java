@@ -1,6 +1,7 @@
 package com.ssau.esalab;
 
 import com.ssau.esalab.controller.CarController;
+import com.ssau.esalab.controller.CarDealerController;
 import com.ssau.esalab.controller.ManagerController;
 import com.ssau.esalab.controller.ModelController;
 
@@ -18,7 +19,7 @@ public class HelloApplication extends Application {
         classes.add(CarController.class);
         classes.add(ModelController.class);
         classes.add(ManagerController.class);
-        classes.add(CarController.class);
+        classes.add(CarDealerController.class);
         return classes;
 
     }

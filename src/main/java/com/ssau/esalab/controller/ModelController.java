@@ -37,7 +37,7 @@ public class ModelController {
     }
 
     @GET
-    @Path("/{modelId}")// localhost:8080/model/
+    @Path("/{modelId}")
     public Response getModelById(@PathParam("modelId") String modelId) throws JsonProcessingException {
         Model model = modelDao.get(Integer.valueOf(modelId));
 
@@ -55,8 +55,8 @@ public class ModelController {
     public Response addNewModel(
             @FormParam("fullName") String fullName,
             @FormParam("age") String age,
-            @FormParam("height") String height,
-            @FormParam("weight") String weight,
+            @FormParam("brand") String brand,
+            @FormParam("body") String body,
             @FormParam("contractNumber") String contractNumber,
             @FormParam("phone") String phone,
             @FormParam("managerId") String managerId
@@ -65,8 +65,8 @@ public class ModelController {
 
         model.setFullName(fullName);
         model.setAge(Integer.parseInt(age));
-        model.setHeight(Integer.parseInt(height));
-        model.setWeight(Integer.parseInt(weight));
+        model.setBrand(brand);
+        model.setBody(body);
         model.setContractNumber(Integer.parseInt(contractNumber));
         model.setPhone(phone);
 
@@ -86,8 +86,8 @@ public class ModelController {
             @PathParam("modelId") String modelId,
             @DefaultValue("") @FormParam("fullName") String fullName,
             @DefaultValue("") @FormParam("age") String age,
-            @DefaultValue("") @FormParam("height") String height,
-            @DefaultValue("") @FormParam("weight") String weight,
+            @DefaultValue("") @FormParam("brand") String brand,
+            @DefaultValue("") @FormParam("body") String body,
             @DefaultValue("") @FormParam("contractNumber") String contractNumber,
             @DefaultValue("") @FormParam("phone") String phone) {
         Model model = modelDao.get(Integer.valueOf(modelId));
@@ -103,11 +103,11 @@ public class ModelController {
         if (!age.isEmpty()) {
             model.setAge(Integer.parseInt(age));
         }
-        if (!height.isEmpty()) {
-            model.setHeight(Integer.parseInt(height));
+        if (!brand.isEmpty()) {
+            model.setBrand(brand);
         }
-        if (!weight.isEmpty()) {
-            model.setWeight(Integer.parseInt(weight));
+        if (!body.isEmpty()) {
+            model.setBody(body);
         }
         if (!contractNumber.isEmpty()) {
             model.setContractNumber(Integer.parseInt(contractNumber));
@@ -131,5 +131,4 @@ public class ModelController {
         return Response.ok().build();
 
     }
-
 }
